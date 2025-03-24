@@ -6,7 +6,7 @@ public class Store {
     public void addProducts(Products product) {
         products.add(product);
     }
-
+    //
     public void buyProduts(String name, int count) {
         for(Products product : products) {
             if (product.getName().equalsIgnoreCase(name)) {
