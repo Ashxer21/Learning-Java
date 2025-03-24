@@ -9,13 +9,9 @@ public class Products {
         this.quantity = quantity;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
-    public double getPrice() {
-        return price;
-    }
+    public double getPrice() { return price; }
 
     public int getQuantity() {
         return quantity;
