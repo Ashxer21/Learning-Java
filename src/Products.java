@@ -9,15 +9,6 @@ public class Products {
         this.quantity = quantity;
     }
 
-    public String getName() { return name; }
-
-    public double getPrice() { return price; }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-
     public void reduceQuantity(int count) {
         if (count <= quantity) {
             quantity -= count;
@@ -26,10 +17,20 @@ public class Products {
         }
     }
 
-
+    @Override
     public String toString() {
-        return name + " - " + quantity + " pcs. (price: " + price + " UAH)";
+        return "Products{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                '}';
     }
 
+    public String getName() { return name; }
 
+    public double getPrice() { return price; }
+
+    public int getQuantity() {
+        return quantity;
+    }
 }
