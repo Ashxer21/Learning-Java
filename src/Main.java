@@ -1,17 +1,24 @@
 public class Main {
     public static void main(String[] args) {
-        Store store = new Store();
+        WeatherService weatherService = new WeatherService();
 
-        store.addProducts(new Product("Bread", 20.4,100));
-        store.addProducts(new Product("Milk", 30.10,50));
+        CityWeather kyiv = new CityWeather("Kyiv", 18.5, 60, "Sunny", 5.5, 1002);
+        CityWeather lviv = new CityWeather("Lviv", 22.1, 10, "Cloudy", 1.0, 1001);
+        CityWeather tokyo = new CityWeather("Tokyo", 30.8, 87, "Sunny", 1, 1002);
 
-        store.showAllProducts();
-
-        store.buyProducts("Bread", 3);
-        store.buyProducts("Milk", 50);
-
-        store.showAllProducts();
+        weatherService.addCity(kyiv);
+        weatherService.addCity(lviv);
+        weatherService.addCity(tokyo);
 
 
+        weatherService.displayAllCities();
+
+        kyiv.compareTemperature(tokyo);
+
+        System.out.println("Is storm coming in Tokyo? " + (tokyo.isStormComing() ? "Yes! ⚠" : "No 😊"));
+
+        System.out.println("Kyiv feels like: " + kyiv.feelsLikeTemperature() + "°C");
+
+        weatherService.getHottestAndColdestCities();
     }
 }
