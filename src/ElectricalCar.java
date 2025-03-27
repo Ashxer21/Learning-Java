@@ -1,13 +1,21 @@
 public class ElectricalCar extends Car {
-    public ElectricalCar(String brand, String model, int year, int maxSpeed, double batteryLevel, double kilometers) {
+    public ElectricalCar(
+            String brand,
+            String model,
+            int year,
+            int maxSpeed,
+            double batteryLevel,
+            double kilometers
+    ) {
         super(brand, model, year, maxSpeed, batteryLevel, kilometers);
     }
 
     @Override
     public void drive(int km) {
-        double batteryConsumption = km * 0.2;
+        double batteryConsumption = getFuelConsumption(km, 0.2f);
+
         if (getFuelLevel() >= batteryConsumption) {
-            super.drive(km);
+            super.consumeFuelAndDrive(batteryConsumption, km);
         } else {
             System.out.println("⚡ Not enough charge to drive " + km + " km!");
         }

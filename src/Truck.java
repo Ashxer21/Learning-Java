@@ -1,8 +1,16 @@
 class Truck extends Car {
-    private int loadCapacity;
+    private final int loadCapacity;
     private int currentLoad;
 
-    public Truck(String brand, String model, int year, int maxSpeed, double fuelLevel, double kilometers, int loadCapacity) {
+    public Truck(
+            String brand,
+            String model,
+            int year,
+            int maxSpeed,
+            double fuelLevel,
+            double kilometers,
+            int loadCapacity
+    ) {
         super(brand, model, year, maxSpeed, fuelLevel, kilometers);
         this.loadCapacity = loadCapacity;
         this.currentLoad = 0;

@@ -1,7 +1,15 @@
 class SportsCar extends Car {
-    private double acceleration;
+    private final double acceleration;
 
-    public SportsCar(String brand, String model, int year, int maxSpeed, double fuelLevel, double kilometers, double acceleration) {
+    public SportsCar(
+            String brand,
+            String model,
+            int year,
+            int maxSpeed,
+            double fuelLevel,
+            double kilometers,
+            double acceleration
+    ) {
         super(brand, model, year, maxSpeed, fuelLevel, kilometers);
         this.acceleration = acceleration;
     }

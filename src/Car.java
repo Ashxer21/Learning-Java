@@ -1,14 +1,21 @@
 import java.util.List;
 
 public class Car {
-    private String brand;
-    private String model;
-    private int year;
-    private int maxSpeed;
+    private final String brand;
+    private final String model;
+    private final int year;
+    private final int maxSpeed;
     private double fuelLevel;
-    private double kilometers;
+    private final double kilometers;
 
-    public Car(String brand, String model, int year, int maxSpeed, double fuelLevel, double kilometers) {
+    public Car(
+            String brand,
+            String model,
+            int year,
+            int maxSpeed,
+            double fuelLevel,
+            double kilometers
+    ) {
         this.brand = brand;
         this.model = model;
         this.year = year;
@@ -25,13 +32,21 @@ public class Car {
     }
 
     public void drive(int km) {
-        double fuelConsumption = km * 0.1;
+        double fuelConsumption = getFuelConsumption(km, 0.1f);
+        consumeFuelAndDrive(fuelConsumption, km);
+    }
+
+    protected double getFuelConsumption(int kilometers, float consumption) {
+        return kilometers * consumption;
+    }
+
+    protected void consumeFuelAndDrive(double fuelConsumption, int kilometers) {
         if (fuelLevel >= fuelConsumption) {
             fuelLevel -= fuelConsumption;
-            kilometers += km;
-            System.out.println(model + " traveled " + km + " km. Fuel remaining: " + fuelLevel + " liters");
+            kilometers += kilometers;
+            System.out.println(model + " traveled " + kilometers + " km. Fuel remaining: " + fuelLevel + " liters");
         } else {
-            System.out.println("⛽ Not enough fuel to drive " + km + " km!");
+            System.out.println("⛽ Not enough fuel to drive " + kilometers + " km!");
         }
     }
 
