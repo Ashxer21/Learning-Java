@@ -14,12 +14,12 @@ public class ElectricalCar extends Car {
     }
 
     public void chargeBattery() {
-        super.setFuelLevel(100);
+        setFuelLevel(100);
         System.out.println(getModel() + " battery fully charged!");
     }
 
-
-    public void refuel() {
+    @Override
+    public void refuel(double liters) {
         chargeBattery();
     }
 }

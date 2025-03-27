@@ -61,11 +61,7 @@ public class Car {
         return model;
     }
 
-    public double getFuelLevel() {
+    protected double getFuelLevel() {
         return fuelLevel;
-    }
-
-    public double getKilometers() {
-        return kilometers;
     }
 }
